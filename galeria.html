@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVIGÁCIÓ (Szinkronban) --- */
+        /* --- NAVIGÁCIÓ (Hamburger menüvel) --- */
         nav {
             width: 100%;
             padding: 15px 5%;
@@ -61,7 +61,7 @@
         }
         .hamburger span { width: 28px; height: 2px; background-color: var(--text-color); transition: var(--transition); }
 
-        /* --- GALÉRIA SZEKCIÓ --- */
+        /* --- GALÉRIA --- */
         .gallery-container {
             padding: 60px 5%;
             max-width: 1400px;
@@ -77,7 +77,6 @@
             letter-spacing: 3px;
         }
 
-        /* Rugalmas Grid a képeknek */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -91,14 +90,12 @@
             transition: var(--transition);
         }
 
-        /* A montázs jellegű széles képeknek külön osztály, hogy két oszlopot foglaljanak el */
-        .wide {
-            grid-column: span 2;
-        }
+        .wide { grid-column: span 2; }
 
         .gallery-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.8s ease;
             filter: grayscale(20%);
@@ -107,6 +104,27 @@
         .gallery-item:hover img {
             transform: scale(1.03);
             filter: grayscale(0%);
+        }
+
+        /* Instagram szekció */
+        .insta-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, var(--bg-color), #050505);
+        }
+
+        .insta-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 5px;
+            transition: var(--transition);
+        }
+
+        .insta-link:hover {
+            color: var(--accent-color);
+            border-color: #fff;
         }
 
         /* --- LÁBLÉC --- */
@@ -161,17 +179,25 @@
         
         <div class="gallery-grid">
             <div class="gallery-item wide">
-                <img src="images/galeria-montazs-1.jpeg" alt="Noir Boudoir Montázs">
+                <img src="images/galeria-1.jpeg" alt="Centaur Noir Montázs">
             </div>
 
-            <div class="gallery-item">
-                <img src="images/galeria-2.jpeg" alt="Boudoir fotó">
-            </div>
-            <div class="gallery-item">
-                <img src="images/galeria-3.jpeg" alt="Glamour fotó">
-            </div>
+            <div class="gallery-item"><img src="images/galeria-2.jpeg" alt="Centaur Photo 2"></div>
+            <div class="gallery-item"><img src="images/galeria-3.jpeg" alt="Centaur Photo 3"></div>
+            <div class="gallery-item"><img src="images/galeria-4.jpeg" alt="Centaur Photo 4"></div>
+            <div class="gallery-item"><img src="images/galeria-5.jpeg" alt="Centaur Photo 5"></div>
+            <div class="gallery-item"><img src="images/galeria-6.jpeg" alt="Centaur Photo 6"></div>
+            <div class="gallery-item"><img src="images/galeria-7.jpeg" alt="Centaur Photo 7"></div>
+            <div class="gallery-item"><img src="images/galeria-8.jpeg" alt="Centaur Photo 8"></div>
+            <div class="gallery-item"><img src="images/galeria-9.jpeg" alt="Centaur Photo 9"></div>
+            <div class="gallery-item"><img src="images/galeria-10.jpeg" alt="Centaur Photo 10"></div>
         </div>
     </div>
+
+    <section class="insta-cta">
+        <p style="margin-bottom: 20px; font-style: italic; color: #888;">További képekért és kulisszatitkokért kövess közösségi oldalamon:</p>
+        <a href="https://www.instagram.com/FELHASZNALONEVED" target="_blank" class="insta-link">@centaur_photography az Instagramon</a>
+    </section>
 
     <footer>
         <p style="color: #888; margin-bottom: 15px;">Tekintsd meg társoldalaimat is!</p>
