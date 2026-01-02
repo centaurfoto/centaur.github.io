@@ -1,3 +1,4 @@
-Sitemap: https://centaur.hu/sitemap.xml
 User-agent: *
 Allow: /
+
+Sitemap: https://centaur.hu/sitemap.xml
