@@ -11,7 +11,7 @@
 
     <meta property="og:title" content="Centaur Photography - A határok feszegetése">
     <meta property="og:description" content="Hétköznapi nőkből szexi bombázók. Nézd meg a portfóliómat!">
-    <meta property="og:image" content="images/centaur-banner.jpg">
+    <meta property="og:image" content="images/centaur-banner.jpeg">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
@@ -22,7 +22,7 @@
         :root {
             --bg-color: #0a0a0a;
             --text-color: #e0e0e0;
-            --accent-color: #c0c0c0; /* Ezüstös hangsúly */
+            --accent-color: #c0c0c0;
             --transition: all 0.4s ease;
         }
 
@@ -40,29 +40,26 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
+        h1, h2 {
             font-family: 'Playfair Display', serif;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         /* Navigáció */
         nav {
-            position: fixed;
-            top: 0;
             width: 100%;
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 10, 0.9);
-            z-index: 1000;
+            background: var(--bg-color);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-logo img {
-            height: 50px;
+            height: 45px;
             width: auto;
-            transition: var(--transition);
         }
 
         .nav-links {
@@ -71,13 +68,13 @@
         }
 
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
 
         .nav-links a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: var(--transition);
@@ -87,47 +84,46 @@
             color: var(--accent-color);
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
+        /* Banner konténer */
+        .banner-container {
             width: 100%;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/centaur-banner.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            line-height: 0; /* Megszünteti az alul lévő fehér hézagot */
+            background-color: #000;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: auto; /* Ez biztosítja a mobilbarát méretezést */
+            display: block;
+        }
+
+        /* Hero szöveg a kép alatt */
+        .hero-text {
+            padding: 60px 20px;
             text-align: center;
-            padding: 0 20px;
+            background: linear-gradient(to bottom, #000, var(--bg-color));
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
         }
 
-        .hero p {
+        .hero-text p {
             font-size: 1.2rem;
             font-style: italic;
             color: var(--accent-color);
         }
 
-        /* Tartalmi rész */
+        /* Szekciók */
         .content-section {
-            padding: 100px 10%;
+            padding: 80px 10%;
             text-align: center;
-        }
-
-        .content-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 14px 35px;
             border: 1px solid var(--text-color);
             color: var(--text-color);
             text-decoration: none;
@@ -142,16 +138,16 @@
             color: #000;
         }
 
-        /* Mobil nézet optimalizálás */
+        /* Mobil nézet finomhangolás */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Mobilon menü gombot igényelne, alapból elrejtve az egyszerűség kedvéért */
+                display: none;
             }
-            .hero h1 {
-                font-size: 2rem;
+            .hero-text h1 {
+                font-size: 2.2rem;
             }
-            .hero {
-                background-attachment: scroll; /* Mobilon a parallax nem mindig jó */
+            .content-section {
+                padding: 60px 5%;
             }
         }
     </style>
@@ -165,28 +161,32 @@
         <ul class="nav-links">
             <li><a href="#home">Kezdőlap</a></li>
             <li><a href="#portfolio">Portfólió</a></li>
-            <li><a href="#about">Filozófia</a></li>
             <li><a href="#contact">Kapcsolat</a></li>
         </ul>
     </nav>
 
-    <section class="hero" id="home">
+    <div class="banner-container" id="home">
+        <img src="images/centaur-banner.jpeg" alt="Centaur Transformation Banner">
+    </div>
+
+    <header class="hero-text">
         <h1>Centaur</h1>
         <p>Ahol a transzformáció művészetté válik</p>
-        <a href="#portfolio" class="cta-button">Belépés a galériába</a>
-    </section>
+        <a href="#portfolio" class="cta-button">Galéria megnyitása</a>
+    </header>
 
     <section class="content-section" id="about">
-        <h2>A Centaur Világa</h2>
-        <p>A Centaur nem csupán fotózás. Ez egy kapu, amelyen átlépve maga mögött hagyja a hétköznapokat. Noir esztétika, mély árnyékok és a benned rejlő magabiztos erő felszabadítása.</p>
-        <p style="margin-top: 20px; color: var(--accent-color);">Noir - Boudoir - Dark Glamour</p>
+        <h2>Noir - Boudoir - Dark Glamour</h2>
+        <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            A Centaur nem csupán fotózás. Ez egy kapu, amelyen átlépve maga mögött hagyja a hétköznapokat. 
+            Mély árnyékok és a benned rejlő magabiztos erő felszabadítása a fotográfia nyelvén.
+        </p>
     </section>
 
-    <footer style="padding: 50px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem;">
         <p>&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
-        <div style="margin-top: 20px;">
-            <a href="#" style="color: var(--accent-color); margin: 0 10px; text-decoration: none;">Instagram</a>
-            <a href="#" style="color: var(--accent-color); margin: 0 10px; text-decoration: none;">Sin City Studio</a>
+        <div style="margin-top: 15px;">
+            <a href="#" style="color: var(--accent-color); margin: 0 10px; text-decoration: none;">Sin City Studio</a> |
             <a href="#" style="color: var(--accent-color); margin: 0 10px; text-decoration: none;">Pixel-Girls</a>
         </div>
     </footer>
