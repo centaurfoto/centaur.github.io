@@ -1,3 +1,9 @@
+Értettem, finomítunk az arányokon! Az ÁSZF linket visszavettük egy diszkrétebb, elegánsabb szintre, hogy ne vonja el a figyelmet a fő tartalomról, és visszaillesztettem a lemaradt "Nézd meg társoldalaimat is!" felhívást a partnerlinkek fölé.
+
+Íme a véglegesített, SEO-optimalizált, 18+ beléptetővel ellátott index.html kódja:
+
+HTML
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -6,8 +12,11 @@
     
     <title>Boudoir & Noir Fotózás Budapest | Centaur Photography</title>
     <meta name="description" content="Professzionális noir-boudoir, glamour és erotikus fotózás Budapesten. Centaur Stúdió: Ahol a hétköznapi nőkből femme fatale-ok válnak. Diszkréció és művészi transzformáció.">
+    <meta name="keywords" content="boudoir fotózás budapest, noir fotózás, glamour fotó, erotikus fotózás, centaur photography, átváltoztatás">
+    <meta name="author" content="Centaur Photography">
     
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -15,74 +24,26 @@
             --bg-color: #0a0a0a;
             --text-color: #e0e0e0;
             --accent-color: #c0c0c0;
+            --muted-color: #666;
             --transition: all 0.4s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Montserrat', sans-serif; line-height: 1.6; overflow-x: hidden; }
         
-        /* --- 18+ OVERLAY (ALAPÉRTELMEZETTEN LÁTHATÓ) --- */
+        /* --- 18+ FIGYELMEZTETÉS RÉTEG --- */
         #age-gate {
-            position: fixed;
-            top: 0; left: 0; 
-            width: 100%; height: 100%;
-            background-color: #000;
-            z-index: 10000; /* Legfelül legyen */
-            display: flex; /* Alapból kényszerítjük a megjelenést */
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #000; z-index: 10000; display: flex;
+            justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
-
-        .age-gate-content {
-            max-width: 500px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 50px 30px;
-            background: #050505;
-            box-shadow: 0 0 50px rgba(0,0,0,1);
-        }
-
-        .age-gate-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #fff;
-            letter-spacing: 5px;
-        }
-
-        .age-gate-content p {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
+        .age-gate-content { max-width: 500px; border: 1px solid rgba(255,255,255,0.1); padding: 50px 30px; background: #050505; }
+        .age-gate-content h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; color: #fff; letter-spacing: 5px; }
+        .age-gate-content p { font-size: 0.9rem; color: #888; margin-bottom: 30px; line-height: 1.8; }
         .age-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-
-        .btn-enter {
-            padding: 14px 40px;
-            background: transparent;
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
+        .btn-enter { padding: 14px 40px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-transform: uppercase; letter-spacing: 2px; cursor: pointer; font-weight: 600; transition: var(--transition); }
         .btn-enter:hover { background: var(--text-color); color: #000; }
-
-        .btn-exit {
-            padding: 14px 40px;
-            color: #555;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            transition: var(--transition);
-        }
-        .btn-exit:hover { color: #888; }
+        .btn-exit { padding: 14px 40px; color: #555; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
 
         /* --- NAVIGÁCIÓ --- */
         nav { width: 100%; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 1002; }
@@ -98,7 +59,7 @@
         .banner-frame { max-width: 1100px; width: 100%; padding: 12px; background-color: #111; border: 1px solid rgba(192, 192, 192, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .banner-frame img { width: 100%; height: auto; display: block; border: 1px solid var(--accent-color); }
 
-        /* --- HERO --- */
+        /* --- HERO & TARTALOM --- */
         .hero-text { padding: 40px 20px 80px 20px; text-align: center; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; }
         .cta-button { display: inline-block; padding: 16px 45px; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-top: 30px; transition: var(--transition); }
@@ -106,27 +67,27 @@
 
         /* --- LÁBLÉC --- */
         footer { padding: 80px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background-color: #050505; }
-        .footer-links { margin-bottom: 40px; }
-        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-heading { color: #888; margin-bottom: 20px; font-size: 0.9rem; font-style: italic; }
+        .footer-links { margin-bottom: 50px; }
+        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+        .footer-links a:hover { color: #fff; }
         
-        /* Kiemelt ÁSZF Box */
+        /* Halványabb ÁSZF Box */
         .aszf-box { margin-bottom: 40px; }
         .aszf-link { 
             display: inline-block; 
-            padding: 12px 35px; 
-            border: 1px solid var(--accent-color); 
-            color: #fff; 
+            padding: 8px 25px; 
+            border: 1px solid rgba(192, 192, 192, 0.15); 
+            color: #777; 
             text-decoration: none; 
-            font-size: 0.8rem; 
+            font-size: 0.7rem; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
-            font-weight: 600;
-            background: rgba(192, 192, 192, 0.05);
             transition: var(--transition);
         }
-        .aszf-link:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+        .aszf-link:hover { border-color: rgba(192, 192, 192, 0.4); color: var(--accent-color); }
 
-        .copyright { color: #444; font-size: 0.75rem; letter-spacing: 1px; }
+        .copyright { color: #444; font-size: 0.7rem; letter-spacing: 1px; }
 
         @media (max-width: 768px) {
             .hamburger { display: flex; }
@@ -153,7 +114,7 @@
 
     <header>
         <nav>
-            <div class="nav-logo"><img src="images/centaur-logo.jpeg" alt="Centaur Photography Logó"></div>
+            <div class="nav-logo"><img src="images/centaur-logo.jpeg" alt="Centaur Photography"></div>
             <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Kezdőlap</a></li>
@@ -167,7 +128,7 @@
     <main>
         <section class="banner-section">
             <div class="banner-frame">
-                <img src="images/centaur-banner.jpeg" alt="Centaur Noir és Boudoir Fotózás Banner">
+                <img src="images/centaur-banner.jpeg" alt="Centaur Noir és Boudoir Fotózás">
             </div>
         </section>
 
@@ -186,20 +147,20 @@
     </main>
 
     <footer>
+        <p class="footer-heading">Nézd meg társoldalaimat is!</p>
         <div class="footer-links">
             <a href="http://www.sincitystudio.hu" target="_blank">Sin City Studio</a>
             <a href="https://pixel-girls.github.io/" target="_blank">Pixel-Girls</a>
         </div>
 
         <div class="aszf-box">
-            <a href="aszf.html" class="aszf-link">Általános Szerződési Feltételek (ÁSZF)</a>
+            <a href="aszf.html" class="aszf-link">Általános Szerződési Feltételek</a>
         </div>
 
         <p class="copyright">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
     </footer>
 
     <script>
-        // Ellenőrizzük az életkort azonnal, amint betöltődik a script
         if (sessionStorage.getItem('ageVerified') === 'true') {
             document.getElementById('age-gate').style.display = 'none';
         }
@@ -209,7 +170,6 @@
             sessionStorage.setItem('ageVerified', 'true');
         }
 
-        // Hamburger Menü
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
         hamburger.addEventListener('click', () => {
@@ -217,6 +177,5 @@
             navLinks.classList.toggle('active');
         });
     </script>
-
 </body>
 </html>
