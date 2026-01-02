@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://centaur.hu/index.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <priority>1.00</priority>
+  </url>
+  
+  <url>
+    <loc>https://centaur.hu/aktualitasok.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://centaur.hu/portfoliok.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://centaur.hu/galeria.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://centaur.hu/contact.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://centaur.hu/aszf.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <priority>0.50</priority>
+  </url>
+</urlset>
