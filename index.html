@@ -21,77 +21,54 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Montserrat', sans-serif; line-height: 1.6; overflow-x: hidden; }
         
-        /* --- 18+ OVERLAY (Splash Screen) --- */
+        /* --- 18+ OVERLAY --- */
         #age-gate {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: #000;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #000; z-index: 9999; display: flex;
+            justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
-
-        .age-gate-content {
-            max-width: 500px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 50px 30px;
-            background: #050505;
-        }
-
-        .age-gate-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .age-gate-content p {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
+        .age-gate-content { max-width: 500px; border: 1px solid rgba(255,255,255,0.1); padding: 50px 30px; background: #050505; }
+        .age-gate-content h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; color: #fff; }
+        .age-gate-content p { font-size: 0.9rem; color: #888; margin-bottom: 30px; line-height: 1.8; }
         .age-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-
-        .btn-enter {
-            padding: 12px 30px;
-            background: transparent;
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
+        .btn-enter { padding: 12px 30px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: var(--transition); }
         .btn-enter:hover { background: var(--text-color); color: #000; }
+        .btn-exit { padding: 12px 30px; color: #555; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; display: flex; align-items: center; }
 
-        .btn-exit {
-            padding: 12px 30px;
-            color: #555;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-        }
-
-        /* --- NAVIGÁCIÓ & ELRENDEZÉS (Változatlan a forráskódból) --- */
+        /* --- NAVIGÁCIÓ --- */
         nav { width: 100%; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 1002; }
         .nav-logo img { height: 45px; width: auto; }
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 25px; }
         .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
-        
         .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; }
         .hamburger span { display: block; width: 28px; height: 2px; background-color: var(--text-color); }
 
-        .banner-container img { width: 100%; height: auto; display: block; }
-        .hero-text { padding: 80px 20px; text-align: center; background: linear-gradient(to bottom, #000, var(--bg-color)); }
+        /* --- ÚJ BANNER KERET STÍLUS --- */
+        .banner-section {
+            padding: 40px 5%; /* Térköz a navigáció és a szöveg között */
+            display: flex;
+            justify-content: center;
+        }
+
+        .banner-frame {
+            max-width: 1100px; /* Nem teljes szélesség */
+            width: 100%;
+            padding: 12px; /* A "paszpartu" vastagsága */
+            background-color: #111; /* Kicsit világosabb fekete a keretnek */
+            border: 1px solid rgba(192, 192, 192, 0.2); /* Külső halvány ezüst keret */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); /* Mélységet adó árnyék */
+        }
+
+        .banner-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--accent-color); /* Belső, élesebb ezüst keret közvetlenül a képen */
+        }
+
+        /* --- HERO TEXT & TARTALOM --- */
+        .hero-text { padding: 40px 20px 80px 20px; text-align: center; background: linear-gradient(to bottom, var(--bg-color), #000); }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; }
         .cta-button { display: inline-block; padding: 16px 45px; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-top: 30px; }
         .cta-button:hover { background: var(--text-color); color: #000; }
@@ -105,6 +82,8 @@
             .nav-links.active { right: 0; }
             .nav-links li { margin: 20px 0; }
             .hero-text h1 { font-size: 2.5rem; }
+            .banner-section { padding: 20px 0; } /* Mobilon kisebb margó */
+            .banner-frame { padding: 8px; border: none; } /* Mobilon egyszerűsített keret */
         }
     </style>
 </head>
@@ -135,8 +114,10 @@
     </header>
 
     <main>
-        <section class="banner-container">
-            <img src="images/centaur-banner.jpeg" alt="Centaur Noir és Boudoir Fotózás Banner">
+        <section class="banner-section">
+            <div class="banner-frame">
+                <img src="images/centaur-banner.jpeg" alt="Centaur Noir és Boudoir Fotózás Banner">
+            </div>
         </section>
 
         <section class="hero-text">
@@ -145,7 +126,7 @@
             <a href="aktualitasok.html" class="cta-button">Aktualitások megtekintése</a>
         </section>
 
-        <section style="padding: 80px 10%; text-align: center;">
+        <section style="padding: 40px 10% 80px 10%; text-align: center;">
             <h2 style="font-family: 'Playfair Display', serif; text-transform: uppercase;">Éld át az átváltozást</h2>
             <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto; color: #aaa;">
                 A fény és az árnyék játéka, ahol Te vagy a középpontban. Több mint két évtizedes tapasztalattal segítünk megörökíteni a benned rejlő erőt és szépséget.
@@ -162,13 +143,11 @@
     </footer>
 
     <script>
-        // --- Korhatár ellenőrzés logikája ---
+        // --- Korhatár ellenőrzés ---
         function acceptAge() {
             document.getElementById('age-gate').style.display = 'none';
             sessionStorage.setItem('ageVerified', 'true');
         }
-
-        // Ellenőrizzük, hogy ebben a munkamenetben elfogadta-e már
         window.onload = function() {
             if (sessionStorage.getItem('ageVerified') === 'true') {
                 document.getElementById('age-gate').style.display = 'none';
