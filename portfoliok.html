@@ -6,7 +6,8 @@
     <title>Csomagok és Árak | Centaur Photography</title>
     <meta name="description" content="Centaur Photography - Erotikus, Boudoir és Glamour fotózási csomagok. All-in árak stúdióbérléssel.">
     
-    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -19,20 +20,83 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
-        
-        /* Navigáció - megegyezik a főoldallal */
-        nav { width: 100%; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--bg-color); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .nav-logo img { height: 45px; width: auto; }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 25px; }
-        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
-        .nav-links a:hover { color: var(--accent-color); }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: 'Montserrat', sans-serif; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
 
+        /* --- NAVIGÁCIÓ (Szinkronban az index.html-lel) --- */
+        nav {
+            width: 100%;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1002;
+        }
+
+        .nav-logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hamburger ikon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        /* --- TARTALOM --- */
         .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+        
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 40px; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+        }
 
-        /* Csomagok elrendezése */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -63,16 +127,60 @@
         .package-features li:last-child { border-bottom: none; }
         .package-features strong { color: #fff; }
 
-        .extra-info { margin-top: 50px; background: #050505; padding: 30px; border-left: 3px solid var(--accent-color); }
-        .extra-info h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
-        .extra-info p, .extra-info li { font-size: 0.85rem; color: #aaa; margin-bottom: 10px; }
+        .extra-info { 
+            margin-top: 50px; 
+            background: #050505; 
+            padding: 30px; 
+            border-left: 3px solid var(--accent-color); 
+        }
+        
+        .extra-info h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; text-transform: uppercase; }
+        .extra-info ul { list-style: none; }
+        .extra-info li { font-size: 0.85rem; color: #aaa; margin-bottom: 12px; position: relative; padding-left: 20px; }
+        .extra-info li::before { content: "•"; position: absolute; left: 0; color: var(--accent-color); }
 
-        footer { padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
-        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; }
+        /* --- LÁBLÉC --- */
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background-color: #050505;
+        }
 
+        .footer-links a {
+            color: var(--accent-color);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        /* --- MOBIL NÉZET ÉS HAMBURGER MENÜ --- */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.5s ease-in-out;
+            }
+
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 20px 0; margin-left: 0; }
+            .nav-links a { font-size: 1.5rem; }
+
             h1 { font-size: 1.8rem; }
+
+            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
         }
     </style>
 </head>
@@ -82,7 +190,14 @@
         <div class="nav-logo">
             <img src="images/centaur-logo.jpeg" alt="Centaur Logo">
         </div>
-        <ul class="nav-links">
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Kezdőlap</a></li>
             <li><a href="portfoliok.html">Portfóliók</a></li>
             <li><a href="galeria.html">Galéria</a></li>
@@ -121,7 +236,7 @@
                     <li>Elkészülés: <strong>2 munkanap</strong></li>
                     <li>Extra kép: 3.500 Ft/db-tól</li>
                 </ul>
-                <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">*Studio4You, Madison, Heaven, Wonderland, S-Lux, Installáció</p>
+                <p style="font-size: 0.75rem; color: #666; margin-top: 10px; text-align: center;">*Studio4You, Madison, Heaven, Wonderland, S-Lux, Installáció</p>
             </div>
 
             <div class="package-card">
@@ -130,13 +245,13 @@
                 <div class="package-price">110.000 Ft <span>+ helyszín</span></div>
                 <ul class="package-features">
                     <li><strong>Munkadíj:</strong> Max. 3 óra időtartamban</li>
-                    <li>Természeti vagy ipari környezet</li>
-                    <li>Apartman, Airbnb vagy saját helyszín</li>
                     <li><strong>15 db</strong> szerkesztett, retusált fotó</li>
+                    <li>Külső helyszín, Apartman vagy Airbnb</li>
                     <li>Minden használható <strong>nyersanyag</strong></li>
+                    <li>Elkészülés: <strong>2 munkanap</strong></li>
                     <li>Extra kép: 4.000 Ft/db-tól</li>
                 </ul>
-                <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Helyszínbérleti díj a megrendelőt terheli.</p>
+                <p style="font-size: 0.75rem; color: #666; margin-top: 10px; text-align: center;">Helyszínbérleti díj a megrendelőt terheli.</p>
             </div>
 
         </div>
@@ -144,23 +259,40 @@
         <div class="extra-info">
             <h3>Fontos tudnivalók</h3>
             <ul>
-                <li><strong>Időtartam:</strong> Minden csomag alapvetően 2 órás időtartamra szól. Minden további megkezdett óra: <strong>15.000 Ft</strong>.</li>
-                <li><strong>Foglalás:</strong> Az időpontfoglalás előleghez kötött, melynek összege 25.000Ft, vagy a 3-as csomag esetében a helyszínbérlet teljes díja. Ez levonódik a végösszegből.</li>
-                <li><strong>Opcionális videó:</strong> Rövid bemutatkozó videó (max. 50-60 mp, szerkesztve,vágva): <strong>35.000 Ft</strong>.</li>
+                <li><strong>Időtartam:</strong> Minden csomag alapvetően 2 órás időtartamra szól (kivéve 3-as csomag). Minden további megkezdett óra munkadíja: <strong>15.000 Ft</strong>.</li>
+                <li><strong>Foglalás:</strong> Az időpontfoglalás előleghez kötött, melynek összege <strong>25.000 Ft</strong>, vagy a 3-as csomag esetében a helyszínbérlet teljes díja. Ez az összeg levonódik a végösszegből.</li>
+                <li><strong>Opcionális videó:</strong> Rövid bemutatkozó videó (max. 50-60 mp, szerkesztve, vágva): <strong>35.000 Ft</strong>.</li>
                 <li><strong>Smink és fodrász:</strong> Profi szakember igényelhető 13.000 - 30.000 Ft közötti áron (helyszíntől függően).</li>
-                <li><strong>Digitális smink:</strong> Utólagosan fejlett képszerkesztő eljárásokkal létrehozva. A csomaghoz igazodva 6-8.000Ft </li>
+                <li><strong>Digitális smink:</strong> Utólagosan, fejlett képszerkesztő eljárásokkal létrehozva: <strong>6.000 - 8.000 Ft</strong>.</li>
             </ul>
         </div>
     </div>
 
     <footer>
         <p style="color: #888; margin-bottom: 15px;">Tekintsd meg társoldalaimat is!</p>
-        <div style="margin-bottom: 30px;">
+        <div class="footer-links" style="margin-bottom: 30px;">
             <a href="http://www.sincitystudio.hu" target="_blank">Sin City Studio</a> |
             <a href="https://pixel-girls.github.io/" target="_blank">Pixel-Girls</a>
         </div>
-        <p style="color: #666;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
+        <p style="color: #666; font-size: 0.8rem;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
