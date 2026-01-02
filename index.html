@@ -1,3 +1,11 @@
+Jogos, az ÁSZF link valóban fontos, és a boudoir/erotikus műfajban bizalmat is épít, ha a látogató látja, hogy jogilag is rendezett a háttér.
+
+Frissítettem a láblécet (footer): az ÁSZF link most már egy külön, jól látható, de az eleganciát megőrző blokkban szerepel, finom ezüstös kerettel és élesebb betűszínnel, hogy ne vesszen el a copyright szöveg mellett.
+
+Íme a javított, teljes index.html kód:
+
+HTML
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -44,37 +52,39 @@
         .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; }
         .hamburger span { display: block; width: 28px; height: 2px; background-color: var(--text-color); }
 
-        /* --- ÚJ BANNER KERET STÍLUS --- */
-        .banner-section {
-            padding: 40px 5%; /* Térköz a navigáció és a szöveg között */
-            display: flex;
-            justify-content: center;
-        }
+        /* --- BANNER KERET --- */
+        .banner-section { padding: 40px 5%; display: flex; justify-content: center; }
+        .banner-frame { max-width: 1100px; width: 100%; padding: 12px; background-color: #111; border: 1px solid rgba(192, 192, 192, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .banner-frame img { width: 100%; height: auto; display: block; border: 1px solid var(--accent-color); }
 
-        .banner-frame {
-            max-width: 1100px; /* Nem teljes szélesség */
-            width: 100%;
-            padding: 12px; /* A "paszpartu" vastagsága */
-            background-color: #111; /* Kicsit világosabb fekete a keretnek */
-            border: 1px solid rgba(192, 192, 192, 0.2); /* Külső halvány ezüst keret */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8); /* Mélységet adó árnyék */
-        }
-
-        .banner-frame img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: 1px solid var(--accent-color); /* Belső, élesebb ezüst keret közvetlenül a képen */
-        }
-
-        /* --- HERO TEXT & TARTALOM --- */
+        /* --- HERO TEXT & CTA --- */
         .hero-text { padding: 40px 20px 80px 20px; text-align: center; background: linear-gradient(to bottom, var(--bg-color), #000); }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; }
-        .cta-button { display: inline-block; padding: 16px 45px; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-top: 30px; }
+        .cta-button { display: inline-block; padding: 16px 45px; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-top: 30px; transition: var(--transition); }
         .cta-button:hover { background: var(--text-color); color: #000; }
 
-        footer { padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background-color: #050505; }
-        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; font-size: 0.85rem; }
+        /* --- LÁBLÉC --- */
+        footer { padding: 80px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background-color: #050505; }
+        .footer-links { margin-bottom: 40px; }
+        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+        .footer-links a:hover { color: #fff; }
+        
+        /* ÁSZF Link Kiemelése */
+        .aszf-box { margin-bottom: 40px; }
+        .aszf-link { 
+            display: inline-block; 
+            padding: 10px 25px; 
+            border: 1px solid rgba(192, 192, 192, 0.3); 
+            color: var(--accent-color); 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            transition: var(--transition);
+        }
+        .aszf-link:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.05); }
+
+        .copyright { color: #555; font-size: 0.75rem; letter-spacing: 1px; }
 
         @media (max-width: 768px) {
             .hamburger { display: flex; }
@@ -82,86 +92,8 @@
             .nav-links.active { right: 0; }
             .nav-links li { margin: 20px 0; }
             .hero-text h1 { font-size: 2.5rem; }
-            .banner-section { padding: 20px 0; } /* Mobilon kisebb margó */
-            .banner-frame { padding: 8px; border: none; } /* Mobilon egyszerűsített keret */
+            .footer-links a { display: block; margin: 15px 0; }
         }
     </style>
 </head>
 <body>
-
-    <div id="age-gate">
-        <div class="age-gate-content">
-            <h2>FIGYELEM</h2>
-            <p>Ez a weboldal felnőtt tartalmú képeket (boudoir, glamour, erotikus fotóművészet) tartalmaz. <br><br> Csak akkor lépjen be, ha elmúlt 18 éves!</p>
-            <div class="age-buttons">
-                <button class="btn-enter" onclick="acceptAge()">Belépek (18+)</button>
-                <a href="https://www.google.hu" class="btn-exit">Elhagyom az oldalt</a>
-            </div>
-        </div>
-    </div>
-
-    <header>
-        <nav>
-            <div class="nav-logo"><img src="images/centaur-logo.jpeg" alt="Centaur Photography Logó"></div>
-            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Kezdőlap</a></li>
-                <li><a href="portfoliok.html">Portfóliók</a></li>
-                <li><a href="galeria.html">Galéria</a></li>
-                <li><a href="contact.html">Kapcsolat</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="banner-section">
-            <div class="banner-frame">
-                <img src="images/centaur-banner.jpeg" alt="Centaur Noir és Boudoir Fotózás Banner">
-            </div>
-        </section>
-
-        <section class="hero-text">
-            <h1>Centaur Photography</h1>
-            <p>Művészi transzformáció és érzékiség. Noir-boudoir fotózás Budapest szívében.</p>
-            <a href="aktualitasok.html" class="cta-button">Aktualitások megtekintése</a>
-        </section>
-
-        <section style="padding: 40px 10% 80px 10%; text-align: center;">
-            <h2 style="font-family: 'Playfair Display', serif; text-transform: uppercase;">Éld át az átváltozást</h2>
-            <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto; color: #aaa;">
-                A fény és az árnyék játéka, ahol Te vagy a középpontban. Több mint két évtizedes tapasztalattal segítünk megörökíteni a benned rejlő erőt és szépséget.
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-links" style="margin-bottom: 30px;">
-            <a href="http://www.sincitystudio.hu" target="_blank">Sin City Studio</a> |
-            <a href="https://pixel-girls.github.io/" target="_blank">Pixel-Girls</a>
-        </div>
-        <p style="color: #666; font-size: 0.8rem;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
-    </footer>
-
-    <script>
-        // --- Korhatár ellenőrzés ---
-        function acceptAge() {
-            document.getElementById('age-gate').style.display = 'none';
-            sessionStorage.setItem('ageVerified', 'true');
-        }
-        window.onload = function() {
-            if (sessionStorage.getItem('ageVerified') === 'true') {
-                document.getElementById('age-gate').style.display = 'none';
-            }
-        };
-
-        // --- Hamburger Menü ---
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-    </script>
-
-</body>
-</html>
