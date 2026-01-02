@@ -6,7 +6,6 @@
     <title>Galéria | Centaur Photography</title>
     
     <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -26,7 +25,7 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVIGÁCIÓ (Hamburger menüvel) --- */
+        /* --- NAVIGÁCIÓ --- */
         nav {
             width: 100%;
             padding: 15px 5%;
@@ -38,105 +37,88 @@
             position: relative;
             z-index: 1002;
         }
-
         .nav-logo img { height: 45px; width: auto; }
-
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 25px; }
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 6px;
-            z-index: 1001;
-        }
-        .hamburger span { width: 28px; height: 2px; background-color: var(--text-color); transition: var(--transition); }
+        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1001; }
+        .hamburger span { width: 28px; height: 2px; background-color: var(--text-color); }
 
         /* --- GALÉRIA --- */
-        .gallery-container {
-            padding: 60px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .gallery-container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
+        /* Kettesével egymás mellé rendezve */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
         .gallery-item {
+            cursor: pointer;
             overflow: hidden;
             background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: var(--transition);
+            aspect-ratio: 3/2; /* Megtartja az arányokat */
         }
 
-        .wide { grid-column: span 2; }
+        /* A széles montázs (első kép) foglalja el az egész sort asztali nézetben */
+        .wide { grid-column: span 2; aspect-ratio: auto; }
 
         .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.8s ease;
-            filter: grayscale(20%);
+            filter: grayscale(30%);
+        }
+        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
+
+        /* --- LIGHTBOX (NAGYÍTÁS) --- */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.03);
-            filter: grayscale(0%);
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80vh;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
 
-        /* Instagram szekció */
-        .insta-cta {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(to bottom, var(--bg-color), #050505);
-        }
-
-        .insta-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.1rem;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 5px;
+        /* Vezérlő gombok */
+        .close-lb, .prev-lb, .next-lb {
+            position: absolute;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.05);
+            width: 50px; height: 50px;
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%;
             transition: var(--transition);
         }
 
-        .insta-link:hover {
-            color: var(--accent-color);
-            border-color: #fff;
-        }
+        .close-lb { top: 30px; right: 30px; }
+        .prev-lb { left: 20px; }
+        .next-lb { right: 20px; }
+        
+        .close-lb:hover, .prev-lb:hover, .next-lb:hover { background: rgba(255,255,255,0.2); }
 
         /* --- LÁBLÉC --- */
-        footer {
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            background-color: #050505;
-        }
-        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; font-size: 0.85rem; }
+        .insta-cta { text-align: center; padding: 60px 20px; }
+        .insta-link { color: var(--text-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); padding-bottom: 5px; }
 
-        /* --- MOBIL NÉZET --- */
+        footer { padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-links a { color: var(--accent-color); margin: 0 10px; text-decoration: none; }
+
+        /* --- MOBIL --- */
         @media (max-width: 768px) {
             .hamburger { display: flex; }
             .nav-links {
@@ -145,27 +127,18 @@
                 flex-direction: column; justify-content: center; align-items: center; transition: 0.5s ease-in-out;
             }
             .nav-links.active { right: 0; }
-            .nav-links li { margin: 20px 0; }
             .nav-links a { font-size: 1.5rem; }
             .gallery-grid { grid-template-columns: 1fr; }
             .wide { grid-column: span 1; }
-            h1 { font-size: 1.8rem; }
-
-            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+            .prev-lb, .next-lb { bottom: 30px; top: auto; } /* Mobilon alulra kerülnek a nyilak */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-logo">
-            <img src="images/centaur-logo.jpeg" alt="Centaur Logo">
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="nav-logo"><img src="images/centaur-logo.jpeg" alt="Centaur Logo"></div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Kezdőlap</a></li>
             <li><a href="portfoliok.html">Portfóliók</a></li>
@@ -178,48 +151,91 @@
         <h1>Portfólió</h1>
         
         <div class="gallery-grid">
-            <div class="gallery-item wide">
-                <img src="images/galeria-1.jpg" alt="Centaur Noir Montázs">
+            <div class="gallery-item wide" onclick="openLightbox(0)">
+                <img src="images/galeria-1.jpeg" alt="Centaur Montázs">
             </div>
 
-            <div class="gallery-item"><img src="images/galeria-2.jpg" alt="Centaur Photo 2"></div>
-            <div class="gallery-item"><img src="images/galeria-3.jpg" alt="Centaur Photo 3"></div>
-            <div class="gallery-item"><img src="images/galeria-4.jpg" alt="Centaur Photo 4"></div>
-            <div class="gallery-item"><img src="images/galeria-5.jpg" alt="Centaur Photo 5"></div>
-            <div class="gallery-item"><img src="images/galeria-6.jpg" alt="Centaur Photo 6"></div>
-            <div class="gallery-item"><img src="images/galeria-7.jpg" alt="Centaur Photo 7"></div>
-            <div class="gallery-item"><img src="images/galeria-8.jpg" alt="Centaur Photo 8"></div>
-            <div class="gallery-item"><img src="images/galeria-9.jpg" alt="Centaur Photo 9"></div>
-            <div class="gallery-item"><img src="images/galeria-10.jpg" alt="Centaur Photo 10"></div>
+            <div class="gallery-item" onclick="openLightbox(1)"><img src="images/galeria-2.jpeg" alt="Centaur Photo 2"></div>
+            <div class="gallery-item" onclick="openLightbox(2)"><img src="images/galeria-3.jpeg" alt="Centaur Photo 3"></div>
+            <div class="gallery-item" onclick="openLightbox(3)"><img src="images/galeria-4.jpeg" alt="Centaur Photo 4"></div>
+            <div class="gallery-item" onclick="openLightbox(4)"><img src="images/galeria-5.jpeg" alt="Centaur Photo 5"></div>
+            <div class="gallery-item" onclick="openLightbox(5)"><img src="images/galeria-6.jpeg" alt="Centaur Photo 6"></div>
+            <div class="gallery-item" onclick="openLightbox(6)"><img src="images/galeria-7.jpeg" alt="Centaur Photo 7"></div>
+            <div class="gallery-item" onclick="openLightbox(7)"><img src="images/galeria-8.jpeg" alt="Centaur Photo 8"></div>
+            <div class="gallery-item" onclick="openLightbox(8)"><img src="images/galeria-9.jpeg" alt="Centaur Photo 9"></div>
+            <div class="gallery-item" onclick="openLightbox(9)"><img src="images/galeria-10.jpeg" alt="Centaur Photo 10"></div>
         </div>
     </div>
 
+    <div id="lightbox" class="lightbox">
+        <span class="close-lb" onclick="closeLightbox()">&times;</span>
+        <span class="prev-lb" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="">
+        <span class="next-lb" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
     <section class="insta-cta">
-        <p style="margin-bottom: 20px; font-style: italic; color: #888;">További képekért és kulisszatitkokért kövess közösségi oldalamon:</p>
-        <a href="https://www.instagram.com/centaurfoto" target="_blank" class="insta-link">@centaur_photography az Instagramon</a>
+        <p style="margin-bottom: 20px; color: #888;">További képekért:</p>
+        <a href="https://www.instagram.com/FELHASZNALONEVED" target="_blank" class="insta-link">@centaur_photography</a>
     </section>
 
     <footer>
-        <p style="color: #888; margin-bottom: 15px;">Tekintsd meg társoldalaimat is!</p>
-        <div class="footer-links">
+        <div class="footer-links" style="margin-bottom: 20px;">
             <a href="http://www.sincitystudio.hu" target="_blank">Sin City Studio</a> |
             <a href="https://pixel-girls.github.io/" target="_blank">Pixel-Girls</a>
         </div>
-        <p style="color: #666; font-size: 0.8rem; margin-top: 20px;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
+        <p style="color: #666; font-size: 0.8rem;">&copy; 2026 Centaur Photography.</p>
     </footer>
 
     <script>
+        // --- Hamburger Menü ---
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
+
+        // --- Lightbox Logika ---
+        let currentIndex = 0;
+        const images = [
+            "images/galeria-1.jpeg", "images/galeria-2.jpeg", "images/galeria-3.jpeg", 
+            "images/galeria-4.jpeg", "images/galeria-5.jpeg", "images/galeria-6.jpeg", 
+            "images/galeria-7.jpeg", "images/galeria-8.jpeg", "images/galeria-9.jpeg", 
+            "images/galeria-10.jpeg"
+        ];
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox-img').src = images[currentIndex];
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Ne görögjön a háttér
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(step) {
+            currentIndex += step;
+            if (currentIndex >= images.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            document.getElementById('lightbox-img').src = images[currentIndex];
+        }
+
+        // Billentyűzet kezelés (Nyilak + Esc)
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('lightbox').style.display === 'flex') {
+                if (e.key === "ArrowLeft") changeImage(-1);
+                if (e.key === "ArrowRight") changeImage(1);
+                if (e.key === "Escape") closeLightbox();
+            }
+        });
+
+        // Bezárás a háttérre kattintva
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
         });
     </script>
 </body>
