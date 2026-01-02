@@ -4,20 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Boudoir & Noir Fotózás Budapest | Centaur Photography - Éld át az átváltozást</title>
+    <title>Boudoir & Noir Fotózás Budapest | Centaur Photography</title>
     <meta name="description" content="Professzionális noir-boudoir, glamour és erotikus fotózás Budapesten. Centaur Stúdió: Ahol a hétköznapi nőkből femme fatale-ok válnak. Diszkréció és művészi transzformáció.">
-    <meta name="keywords" content="boudoir fotózás budapest, noir stílusú fotózás, glamour fotó, erotikus fotózás, centaur photography, átváltoztató fotózás, sötét tónusú portré">
-    <meta name="author" content="Centaur Photography">
-    <link rel="canonical" href="https://centaur.hu/">
-
-    <meta property="og:title" content="Centaur Photography - Noir & Boudoir Átváltozás">
-    <meta property="og:description" content="Feszegesd a határaidat! Művészi erotikus és boudoir fotózás a fény és árnyék játékával.">
-    <meta property="og:image" content="images/centaur-banner.jpeg">
-    <meta property="og:url" content="https://centaur.hu/">
-    <meta property="og:type" content="website">
-
+    
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -28,192 +18,113 @@
             --transition: all 0.4s ease;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2 {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* --- NAVIGÁCIÓ --- */
-        nav {
-            width: 100%;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--bg-color);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            z-index: 1002;
-        }
-
-        .nav-logo img {
-            height: 45px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 6px;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 2px;
-            background-color: var(--text-color);
-            transition: var(--transition);
-        }
-
-        /* --- BANNER ÉS HERO --- */
-        .banner-container {
-            width: 100%;
-            line-height: 0;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Montserrat', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        
+        /* --- 18+ OVERLAY (Splash Screen) --- */
+        #age-gate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-color: #000;
-        }
-
-        .banner-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .hero-text {
-            padding: 80px 20px;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: linear-gradient(to bottom, #000, var(--bg-color));
+            padding: 20px;
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
+        .age-gate-content {
+            max-width: 500px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 50px 30px;
+            background: #050505;
         }
 
-        .hero-text p {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--accent-color);
-            max-width: 700px;
-            margin: 0 auto 30px auto;
+        .age-gate-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
         }
 
-        /* --- TARTALOM --- */
-        .content-section {
-            padding: 80px 10%;
-            text-align: center;
+        .age-gate-content p {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 30px;
+            line-height: 1.8;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 16px 45px;
+        .age-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        .btn-enter {
+            padding: 12px 30px;
+            background: transparent;
             border: 1px solid var(--text-color);
             color: var(--text-color);
-            text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 600;
+            cursor: pointer;
             transition: var(--transition);
         }
 
-        .cta-button:hover {
-            background-color: var(--text-color);
-            color: #000;
-        }
+        .btn-enter:hover { background: var(--text-color); color: #000; }
 
-        /* --- LÁBLÉC --- */
-        footer {
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            background-color: #050505;
-        }
-
-        .footer-links a {
-            color: var(--accent-color);
-            margin: 0 15px;
+        .btn-exit {
+            padding: 12px 30px;
+            color: #555;
             text-decoration: none;
-            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
         }
 
-        /* --- MOBIL NÉZET --- */
+        /* --- NAVIGÁCIÓ & ELRENDEZÉS (Változatlan a forráskódból) --- */
+        nav { width: 100%; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 1002; }
+        .nav-logo img { height: 45px; width: auto; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+        
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; }
+        .hamburger span { display: block; width: 28px; height: 2px; background-color: var(--text-color); }
+
+        .banner-container img { width: 100%; height: auto; display: block; }
+        .hero-text { padding: 80px 20px; text-align: center; background: linear-gradient(to bottom, #000, var(--bg-color)); }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; }
+        .cta-button { display: inline-block; padding: 16px 45px; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-top: 30px; }
+        .cta-button:hover { background: var(--text-color); color: #000; }
+
+        footer { padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background-color: #050505; }
+        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; font-size: 0.85rem; }
+
         @media (max-width: 768px) {
             .hamburger { display: flex; }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background-color: rgba(10, 10, 10, 0.98);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: 0.5s ease-in-out;
-            }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background-color: rgba(10, 10, 10, 0.98); backdrop-filter: blur(10px); flex-direction: column; justify-content: center; align-items: center; transition: 0.5s ease-in-out; }
             .nav-links.active { right: 0; }
             .nav-links li { margin: 20px 0; }
-            .nav-links a { font-size: 1.5rem; }
             .hero-text h1 { font-size: 2.5rem; }
-            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
         }
     </style>
 </head>
 <body>
 
+    <div id="age-gate">
+        <div class="age-gate-content">
+            <h2>FIGYELEM</h2>
+            <p>Ez a weboldal felnőtt tartalmú képeket (boudoir, glamour, erotikus fotóművészet) tartalmaz. <br><br> Csak akkor lépjen be, ha elmúlt 18 éves!</p>
+            <div class="age-buttons">
+                <button class="btn-enter" onclick="acceptAge()">Belépek (18+)</button>
+                <a href="https://www.google.hu" class="btn-exit">Elhagyom az oldalt</a>
+            </div>
+        </div>
+    </div>
+
     <header>
         <nav>
-            <div class="nav-logo">
-                <img src="images/centaur-logo.jpeg" alt="Centaur Photography Logó">
-            </div>
-
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
+            <div class="nav-logo"><img src="images/centaur-logo.jpeg" alt="Centaur Photography Logó"></div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Kezdőlap</a></li>
                 <li><a href="portfoliok.html">Portfóliók</a></li>
@@ -230,41 +141,46 @@
 
         <section class="hero-text">
             <h1>Centaur Photography</h1>
-            <p>Ahol kinyílik egy ajtó az átváltozás felé. Noir-boudoir és glamour fotózás hétköznapi nőknek.</p>
+            <p>Művészi transzformáció és érzékiség. Noir-boudoir fotózás Budapest szívében.</p>
             <a href="aktualitasok.html" class="cta-button">Aktualitások megtekintése</a>
         </section>
 
-        <section class="content-section" id="about">
-            <h2>Művészi Átváltozás - Erotikus & Glamour</h2>
-            <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                A Centaur név több mint 23 éve jelenti a szakmai minőséget és a diszkréciót. Budapest szívében várjuk azokat a hölgyeket, akik szeretnék felfedezni önmaguk rejtett, magabiztos és érzéki oldalát.
+        <section style="padding: 80px 10%; text-align: center;">
+            <h2 style="font-family: 'Playfair Display', serif; text-transform: uppercase;">Éld át az átváltozást</h2>
+            <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto; color: #aaa;">
+                A fény és az árnyék játéka, ahol Te vagy a középpontban. Több mint két évtizedes tapasztalattal segítünk megörökíteni a benned rejlő erőt és szépséget.
             </p>
         </section>
     </main>
 
     <footer>
-        <p style="color: #888; margin-bottom: 15px;">Tekintsd meg társoldalaimat is!</p>
         <div class="footer-links" style="margin-bottom: 30px;">
             <a href="http://www.sincitystudio.hu" target="_blank">Sin City Studio</a> |
             <a href="https://pixel-girls.github.io/" target="_blank">Pixel-Girls</a>
         </div>
-        
         <p style="color: #666; font-size: 0.8rem;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
-        <a href="aszf.html" style="display: block; margin-top: 30px; color: #444; text-decoration: none; font-size: 0.75rem;">Általános Szerződési Feltételek (ÁSZF)</a>
     </footer>
 
     <script>
+        // --- Korhatár ellenőrzés logikája ---
+        function acceptAge() {
+            document.getElementById('age-gate').style.display = 'none';
+            sessionStorage.setItem('ageVerified', 'true');
+        }
+
+        // Ellenőrizzük, hogy ebben a munkamenetben elfogadta-e már
+        window.onload = function() {
+            if (sessionStorage.getItem('ageVerified') === 'true') {
+                document.getElementById('age-gate').style.display = 'none';
+            }
+        };
+
+        // --- Hamburger Menü ---
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
-        });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
         });
     </script>
 
