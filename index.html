@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Centaur Photography | Erotikus Boudoir Glamour fotózás </title>
-    <meta name="description" content="Exkluzív noir-boudoir és merész portréfotózás. Fedezd fel a benned rejlő femme fatale-t a Centaur Stúdióban. Diszkréció és művészi transzformáció.">
-    <meta name="keywords" content="fotózás, boudoir, noir, centaur, portré, erotikus stílus, Budapest, transzformáció">
-    <meta name="author" content="Centaur">
+    <title>Boudoir & Noir Fotózás Budapest | Centaur Photography - Éld át az átváltozást</title>
+    <meta name="description" content="Professzionális noir-boudoir, glamour és erotikus fotózás Budapesten. Centaur Stúdió: Ahol a hétköznapi nőkből femme fatale-ok válnak. Diszkréció és művészi transzformáció.">
+    <meta name="keywords" content="boudoir fotózás budapest, noir stílusú fotózás, glamour fotó, erotikus fotózás, centaur photography, átváltoztató fotózás, sötét tónusú portré">
+    <meta name="author" content="Centaur Photography">
+    <link rel="canonical" href="https://centaur.hu/">
 
-    <meta property="og:title" content="Centaur Photography - A határok feszegetése">
-    <meta property="og:description" content="Hétköznapi nőkből szexi bombázók. Nézd meg a portfóliómat!">
+    <meta property="og:title" content="Centaur Photography - Noir & Boudoir Átváltozás">
+    <meta property="og:description" content="Feszegesd a határaidat! Művészi erotikus és boudoir fotózás a fény és árnyék játékával.">
     <meta property="og:image" content="images/centaur-banner.jpeg">
+    <meta property="og:url" content="https://centaur.hu/">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
@@ -86,7 +88,6 @@
             color: var(--accent-color);
         }
 
-        /* Hamburger ikon */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -117,13 +118,13 @@
         }
 
         .hero-text {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             background: linear-gradient(to bottom, #000, var(--bg-color));
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 15px;
         }
 
@@ -131,9 +132,11 @@
             font-size: 1.2rem;
             font-style: italic;
             color: var(--accent-color);
+            max-width: 700px;
+            margin: 0 auto 30px auto;
         }
 
-        /* --- TARTALOM ÉS GOMBOK --- */
+        /* --- TARTALOM --- */
         .content-section {
             padding: 80px 10%;
             text-align: center;
@@ -141,13 +144,13 @@
 
         .cta-button {
             display: inline-block;
-            padding: 14px 35px;
+            padding: 16px 45px;
             border: 1px solid var(--text-color);
             color: var(--text-color);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-top: 30px;
+            font-weight: 600;
             transition: var(--transition);
         }
 
@@ -171,16 +174,9 @@
             transition: var(--transition);
         }
 
-        .footer-links a:hover {
-            color: #fff;
-        }
-
-        /* --- MOBIL NÉZET ÉS HAMBURGER MENÜ --- */
+        /* --- MOBIL NÉZET --- */
         @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
+            .hamburger { display: flex; }
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -194,74 +190,57 @@
                 align-items: center;
                 transition: 0.5s ease-in-out;
             }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                margin: 20px 0;
-                margin-left: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.5rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            /* Hamburger X animáció */
-            .hamburger.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 20px 0; }
+            .nav-links a { font-size: 1.5rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-logo">
-            <img src="images/centaur-logo.jpeg" alt="Centaur Logo">
-        </div>
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <img src="images/centaur-logo.jpeg" alt="Centaur Photography Logó">
+            </div>
 
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-        <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Kezdőlap</a></li>
-            <li><a href="portfoliok.html">Portfóliók</a></li>
-            <li><a href="galeria.html">Galéria</a></li>
-            <li><a href="contact.html">Kapcsolat</a></li>
-        </ul>
-    </nav>
-
-    <div class="banner-container" id="home">
-        <img src="images/centaur-banner.jpeg" alt="Centaur Transformation Banner">
-    </div>
-
-    <header class="hero-text">
-        <h1>Centaur</h1>
-        <p>Ahol kinyílik egy ajtó az átváltozás felé</p>
-        <a href="galeria.html" class="cta-button">Galéria megnyitása</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Kezdőlap</a></li>
+                <li><a href="portfoliok.html">Portfóliók</a></li>
+                <li><a href="galeria.html">Galéria</a></li>
+                <li><a href="contact.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="content-section" id="about">
-        <h2>Erotikus - Boudoir - Glamour</h2>
-        <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
-            A Centaur név már több mint 23 éve létezik a szakmában. Célom, hogy nyissak egy kaput a szürkeségből a fény felé. Ahol Te lehetsz az átváltozás középpontjában.
-        </p>
-    </section>
+    <main>
+        <section class="banner-container">
+            <img src="images/centaur-banner.jpeg" alt="Centaur Noir és Boudoir Fotózás Banner">
+        </section>
+
+        <section class="hero-text">
+            <h1>Centaur Photography</h1>
+            <p>Ahol kinyílik egy ajtó az átváltozás felé. Noir-boudoir és glamour fotózás hétköznapi nőknek.</p>
+            <a href="aktualitasok.html" class="cta-button">Aktualitások megtekintése</a>
+        </section>
+
+        <section class="content-section" id="about">
+            <h2>Művészi Átváltozás - Erotikus & Glamour</h2>
+            <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                A Centaur név több mint 23 éve jelenti a szakmai minőséget és a diszkréciót. Budapest szívében várjuk azokat a hölgyeket, akik szeretnék felfedezni önmaguk rejtett, magabiztos és érzéki oldalát.
+            </p>
+        </section>
+    </main>
 
     <footer>
         <p style="color: #888; margin-bottom: 15px;">Tekintsd meg társoldalaimat is!</p>
@@ -271,20 +250,16 @@
         </div>
         
         <p style="color: #666; font-size: 0.8rem;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
-        
         <a href="aszf.html" style="display: block; margin-top: 30px; color: #444; text-decoration: none; font-size: 0.75rem;">Általános Szerződési Feltételek (ÁSZF)</a>
     </footer>
 
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
-
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-
-        // Bezárás linkre kattintáskor
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
