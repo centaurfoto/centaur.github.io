@@ -145,4 +145,78 @@
         <div class="legal-section">
             <h2>1. Alapadatok</h2>
             <p>A jelen ÁSZF szabályozza a Centaur Photography (továbbiakban: Szolgáltató) és a szolgáltatást igénybe vevő (továbbiakban: Megrendelő) közötti jogviszonyt.</p>
-            <p
+            <p><strong>Kapcsolattartás:</strong> centaurfoto@gmail.com | +36 30 557 2999</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>2. Foglalás és Lemondás</h2>
+            <ul>
+                <li>Az időpontfoglalás minden esetben előleg megfizetésével válik véglegessé.</li>
+                <li>Az előleg összege az 1-es és 2-es csomag esetén <strong>25.000 Ft</strong>, a 3-as csomag esetén a helyszínbérlet teljes díja.</li>
+                <li>Az előleg a fotózás végösszegéből levonásra kerül.</li>
+                <li>Lemondás esetén az előleg nem jár vissza, azonban az időpont egyszeri alkalommal módosítható legkésőbb 72 órával a fotózás előtt.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2>3. A fotózás menete</h2>
+            <ul>
+                <li>A csomagok alapvetően 2 órás időtartamot tartalmaznak (kivéve a 3-as csomagot, amely 3 órát).</li>
+                <li>Minden további megkezdett óra munkadíja <strong>15.000 Ft</strong>, amelyhez stúdiófotózás esetén a terem aktuális bérleti díja is hozzáadódik.</li>
+                <li>A Megrendelő köteles a megbeszélt időpontban pontosan megjelenni. A késés a fotózási idő rovására megy.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2>4. Átadás és Retusálás</h2>
+            <ul>
+                <li>Az elkészült válogatott nyers képeket a Szolgáltató a fotózást követő munkanapon elérhetővé teszi.</li>
+                <li>A csomagban foglalt retusált képek (12 vagy 15 db) kiválasztása után az elkészülési határidő <strong>2 munkanap</strong>.</li>
+                <li>A Szolgáltató a használható nyersanyagot is átadja digitális formában.</li>
+                <li>Extra képkidolgozás igényelhető a csomagban meghatározott árakon (2.500 - 4.000 Ft/db).</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2>5. Szerzői jogok és Felhasználás</h2>
+            <ul>
+                <li>A képek szerzői joga a Szolgáltatót illeti meg.</li>
+                <li>A Megrendelő a kész képeket saját célra (közösségi média, portfólió, privát felhasználás) korlátozás nélkül használhatja.</li>
+                <li><strong>Diszkréció:</strong> A Szolgáltató a Megrendelő kifejezett írásbeli beleegyezése nélkül nem hozza nyilvánosságra a készült fotókat.</li>
+                <li>Digitális smink és utólagos módosítások külön díjazás ellenében kérhetőek.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2>6. Felelősség</h2>
+            <p>A Szolgáltató nem vállal felelősséget a Megrendelő által hozott ruhákért, kiegészítőkért vagy a helyszínen okozott esetleges károkért, amelyeket a Megrendelő idézett elő.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #888; margin-bottom: 15px;">Tekintsd meg társoldalaimat is!</p>
+        <div class="footer-links">
+            <a href="http://www.sincitystudio.hu" target="_blank">Sin City Studio</a> |
+            <a href="https://pixel-girls.github.io/" target="_blank">Pixel-Girls</a>
+        </div>
+        <p style="color: #666; font-size: 0.8rem; margin-top: 20px;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
