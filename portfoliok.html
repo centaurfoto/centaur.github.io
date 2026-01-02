@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Csomagok és Árak | Centaur Photography</title>
+    <meta name="description" content="Centaur Photography - Erotikus, Boudoir és Glamour fotózási csomagok. All-in árak stúdióbérléssel.">
+    
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #141414;
+            --text-color: #e0e0e0;
+            --accent-color: #c0c0c0;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
+        
+        /* Navigáció - megegyezik a főoldallal */
+        nav { width: 100%; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--bg-color); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .nav-logo img { height: 45px; width: auto; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+
+        /* Csomagok elrendezése */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .package-card {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .package-card h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; color: #fff; text-align: center; }
+        .package-price { font-size: 2rem; font-weight: 600; text-align: center; margin-bottom: 25px; color: var(--accent-color); }
+        .package-price span { font-size: 0.9rem; font-weight: 300; }
+
+        .package-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+        .package-features li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+        .package-features li:last-child { border-bottom: none; }
+        .package-features strong { color: #fff; }
+
+        .extra-info { margin-top: 50px; background: #050505; padding: 30px; border-left: 3px solid var(--accent-color); }
+        .extra-info h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
+        .extra-info p, .extra-info li { font-size: 0.85rem; color: #aaa; margin-bottom: 10px; }
+
+        footer { padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
+        .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <img src="images/centaur-logo.jpg" alt="Centaur Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="portfoliok.html">Portfóliók</a></li>
+            <li><a href="galeria.html">Galéria</a></li>
+            <li><a href="index.html#contact">Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Választható Csomagok</h1>
+
+        <div class="pricing-grid">
+            
+            <div class="package-card">
+                <h2>1-es Csomag</h2>
+                <p style="text-align: center; font-size: 0.8rem; margin-bottom: 10px;">Lightroom Fotóstúdió (Bp. IV.)</p>
+                <div class="package-price">86.000 Ft</div>
+                <ul class="package-features">
+                    <li><strong>Tartalmazza:</strong> 2 óra fotózás munkadíja</li>
+                    <li><strong>Tartalmazza:</strong> 2 óra terembérleti díj</li>
+                    <li><strong>12 db</strong> szerkesztett, retusált fotó</li>
+                    <li>Minden használható <strong>nyersanyag</strong></li>
+                    <li>Elkészülés: <strong>2 munkanap</strong></li>
+                    <li>Extra kép: 2.500 Ft/db-tól</li>
+                </ul>
+            </div>
+
+            <div class="package-card" style="border-color: rgba(192, 192, 192, 0.3);">
+                <h2>2-es Csomag</h2>
+                <p style="text-align: center; font-size: 0.8rem; margin-bottom: 10px;">Választható Budapesti Stúdiók</p>
+                <div class="package-price">90.000 Ft</div>
+                <ul class="package-features">
+                    <li><strong>Tartalmazza:</strong> 2 óra fotózás munkadíja</li>
+                    <li><strong>Tartalmazza:</strong> 2 óra terembérleti díj*</li>
+                    <li><strong>12 db</strong> szerkesztett, retusált fotó</li>
+                    <li>Minden használható <strong>nyersanyag</strong></li>
+                    <li>Elkészülés: <strong>2 munkanap</strong></li>
+                    <li>Extra kép: 3.000 Ft/db-tól</li>
+                </ul>
+                <p style="font-size: 0.7rem; color: #666; margin-top: 10px;">*Studio4You, Madison, Heaven, Wonderland, S-Lux, Installáció</p>
+            </div>
+
+            <div class="package-card">
+                <h2>3-as Csomag</h2>
+                <p style="text-align: center; font-size: 0.8rem; margin-bottom: 10px;">Kiszállás / Külső helyszín</p>
+                <div class="package-price">80.000 Ft <span>+ helyszín</span></div>
+                <ul class="package-features">
+                    <li><strong>Munkadíj:</strong> Max. 2 óra időtartamban</li>
+                    <li>Természeti vagy ipari környezet</li>
+                    <li>Apartman, Airbnb vagy saját helyszín</li>
+                    <li><strong>12 db</strong> szerkesztett, retusált fotó</li>
+                    <li>Minden használható <strong>nyersanyag</strong></li>
+                    <li>Extra kép: 4.000 Ft/db-tól</li>
+                </ul>
+                <p style="font-size: 0.7rem; color: #666; margin-top: 10px;">Helyszínbérleti díj a megrendelőt terheli.</p>
+            </div>
+
+        </div>
+
+        <div class="extra-info">
+            <h3>Fontos tudnivalók</h3>
+            <ul>
+                <li><strong>Időtartam:</strong> Minden csomag alapvetően 2 órás időtartamra szól. Minden további megkezdett óra: <strong>15.000 Ft</strong>.</li>
+                <li><strong>Foglalás:</strong> Az időpontfoglalás előleghez kötött, melynek összege a helyszínbérlet teljes díja. Ez levonódik a végösszegből.</li>
+                <li><strong>Opcionális videó:</strong> Rövid bemutatkozó videó (max. 50-60 mp, vágva): <strong>35.000 Ft</strong>.</li>
+                <li><strong>Smink és fodrász:</strong> Profi szakember igényelhető 13.000 - 30.000 Ft közötti áron (helyszíntől függően).</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #888; margin-bottom: 15px;">Tekintsd meg társoldalaimat is!</p>
+        <div style="margin-bottom: 30px;">
+            <a href="http://www.sincitystudio.hu" target="_blank">Sin City Studio</a> |
+            <a href="https://pixel-girls.github.io/" target="_blank">Pixel-Girls</a>
+        </div>
+        <p style="color: #666;">&copy; 2026 Centaur Photography. Minden jog fenntartva.</p>
+    </footer>
+
+</body>
+</html>
