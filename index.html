@@ -101,8 +101,10 @@
         /* --- HERO & TARTALOM --- */
         .hero-text { padding: 40px 20px 80px 20px; text-align: center; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-text p { font-size: 1.1rem; color: var(--accent-color); font-style: italic; margin-bottom: 20px; }
+        .hero-text p { font-size: 1.1rem; color: var(--accent-color); font-style: italic; margin-bottom: 30px; }
         
+        .cta-container { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+
         .cta-button { 
             display: inline-block; 
             padding: 16px 45px; 
@@ -112,8 +114,8 @@
             text-transform: uppercase; 
             letter-spacing: 2px; 
             font-weight: 600; 
-            margin-top: 30px; 
             transition: var(--transition); 
+            min-width: 280px; /* Egységes szélesség a gomboknak */
         }
         .cta-button:hover { background: var(--text-color); color: #000; }
 
@@ -124,7 +126,6 @@
         .footer-links a { color: var(--accent-color); margin: 0 15px; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
         .footer-links a:hover { color: #fff; }
         
-        /* Halványított ÁSZF Box */
         .aszf-box { margin-bottom: 40px; }
         .aszf-link { 
             display: inline-block; 
@@ -193,7 +194,11 @@
         <section class="hero-text">
             <h1>Centaur Photography</h1>
             <p>Ahol az átváltozás megtörténik. Erotikus - boudoir - Glamour fotózás Budapesten.</p>
-            <a href="aktualitasok.html" class="cta-button">Aktualitások megtekintése</a>
+            
+            <div class="cta-container">
+                <a href="portfoliok.html" class="cta-button">Csomagok / Árak</a>
+                <a href="aktualitasok.html" class="cta-button">Aktualitások megtekintése</a>
+            </div>
         </section>
 
         <section style="padding: 40px 10% 80px 10%; text-align: center;">
